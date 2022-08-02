@@ -1,0 +1,6 @@
+name: OnlineTime
+version: '${project.version}'
+main: me.justamood.onlinetime.OnlineTime
+api-version: 1.19
+authors: [ MoodTheCoolDude ]
+description: Only advance time when players are online!
