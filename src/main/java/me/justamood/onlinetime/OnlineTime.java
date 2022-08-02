@@ -16,15 +16,24 @@ public final class OnlineTime extends JavaPlugin implements Listener {
         // Plugin startup logic
         System.out.println("OnlineTime has been enabled!");
         getServer().getPluginManager().registerEvents(this, this);
+
+        // Once the server is ready, set doDaylightCycle to false.
+        Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
+            @Override
+            public void run(){
+                if(Bukkit.getOnlinePlayers().size() == 0) {
+                    Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+                }
+            }
+        });
+
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         System.out.println("OnlineTime has been disabled!");
-        Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
     }
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
