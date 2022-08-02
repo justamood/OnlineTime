@@ -22,6 +22,7 @@ public final class OnlineTime extends JavaPlugin implements Listener {
     public void onDisable() {
         // Plugin shutdown logic
         System.out.println("OnlineTime has been disabled!");
+        Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
     }
 
     @EventHandler
