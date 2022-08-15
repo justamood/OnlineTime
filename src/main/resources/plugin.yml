@@ -4,3 +4,8 @@ main: me.justamood.onlinetime.OnlineTime
 api-version: 1.19
 authors: [ MoodTheCoolDude ]
 description: Only advance time when players are online!
+commands:
+  otreload:
+    permission: onlinetime.reload
+    description: Reload the config
+    usage: /otreload
