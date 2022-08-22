@@ -5,6 +5,7 @@ import me.justamood.onlinetime.api.OnlineTimeWorld;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -31,6 +32,12 @@ public class OnlineTimeEvents implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         handle(event.getPlayer().getWorld(), false);
+    }
+
+    @EventHandler
+    public void onPlayerSwitchWorld(PlayerChangedWorldEvent event) {
+        handle(event.getPlayer().getWorld(), true);
+        handle(event.getFrom(), false);
     }
 
 }
