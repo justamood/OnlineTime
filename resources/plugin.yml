@@ -1,0 +1,12 @@
+name: OnlineTime
+version: '${project.version}'
+main: me.justamood.onlinetime.OnlineTimePlugin
+api-version: 1.13
+authors: [ MoodTheCoolDude, Wasabi_Thumbs ]
+description: Only advance time when players are online!
+load: POSTWORLD
+commands:
+  otreload:
+    permission: onlinetime.reload
+    description: Reload the config
+    usage: /otreload
